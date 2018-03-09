@@ -1,25 +1,99 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+
+
+
+  <div class="container center-block">
+    <h1 id="title">SCUBER</h1>
+    <h2 id="subtitle"></h2>
+
+    <!-- auth stuff -->
+    <div id="display-authed" class="centered-content">
+      <a id="change-password-button" data-toggle="collapse" href="#change-password-form" role="button" aria-expanded="false" aria-controls="change-password-form">
+              Change Password
+            </a> &nbsp; // &nbsp;
+      <a href="#" id="sign-out-button">Log Out</a>
+      <div id="change-password-form" class="panel collapse" f>
+        <form id="change-password" class="border">
+          <div class="form-group">
+            <input class="form-control" type="password" id="changePwd1" name="passwords[old]" placeholder="Old Password" autocomplete="new-password">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" id="changePwd2" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
+          </div>
+          <input type="submit" value="Change password" class="btn btn-warning">
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+
+        <div id="display-not-auth" class="centered-content">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a id="sign-in-button"  role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    You back again? Log in!
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <form id="sign-in" class="border">
+                    <input type="text" class="form-control" id="loginEmail" name="credentials[email]" placeholder="Email" autocomplete="new-password">
+                    <input type="password" class="form-control" id="loginPwd" name="credentials[password]" placeholder="Password" autocomplete="new-password">
+                    <input type="submit" value="Log in" class="btn btn-warning">
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      New User? Create an account!
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <form id="sign-up" class="border">
+                    <input type="text" class="form-control" id="signupEmail" name="credentials[email]" placeholder="Email" autocomplete="new-password">
+                    <input type="password" class="form-control" id="signupPwd" name="credentials[password]" placeholder="Password" autocomplete="new-password">
+                    <input type="password" class="form-control" id="signupConfPwd" name="credentials[password_confirmation]" placeholder="Confirm password" autocomplete="new-password">
+                    <input type="submit" value="Create account" class="btn btn-warning">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- end auth stuff -->
+
+<div id="create-dive"></div>
+<div id="show-dives"></div>
+
+  </div>
+
+</body>
+
 </html>
