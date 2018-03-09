@@ -66,10 +66,8 @@ const signOutSuccess = function (data) {
   helpers.displayMessage('subtitle', 'Come back soon...', 'big-green')
   clearFields()
   store.user = data
-  store.game = data
   // console.log(store)
   updateAuthLayout()
-  gameUI.updateGamesLayout()
   $('#collapseOne').removeClass('in')
 }
 

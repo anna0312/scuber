@@ -3,7 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events')
-
+const diveEvents = require('./dive/events')
 $(() => {
   setAPIOrigin(location, config)
 })
@@ -16,6 +16,7 @@ $(() => {
 $(() => {
   authEvents.addHandlers()
   authEvents.pageLoadEvents()
+  diveEvents.addHandlers()
   // gameEvents.addHandlers
   // statsEvents.addHandlers
 })
