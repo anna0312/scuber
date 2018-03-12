@@ -25,6 +25,17 @@ const showUpdateDive = (data) => {
   $('#primary-content').html(showUpdateDiveFormHtml)
 }
 
+const updateDiveSuccess = function (data) {
+  helpers.displayMessage('title', 'Dive updated')
+  helpers.displayMessage('subtitle', 'Dive updated successfully!')
+  console.log()
+}
+
+const deleteDiveSuccess = function (data) {
+  helpers.displayMessage('title', 'Dive deleted')
+  helpers.displayMessage('subtitle', 'Dive deleted!')
+}
+
 const createDiveSuccess = function (data) {
   helpers.displayMessage('title', 'Dive saved')
   helpers.displayMessage('subtitle', 'Noice!')
@@ -44,12 +55,15 @@ const generalFailure = function (error) {
   helpers.displayMessage('title', 'Something went wrong')
   helpers.displayMessage('subtitle', 'Please contact the authorities')
   console.error(error)
+  console.log('error is', error)
 }
 
 module.exports = {
   getDivesSuccess,
   showCreateDive,
   showUpdateDive,
+  updateDiveSuccess,
+  deleteDiveSuccess,
   createDiveSuccess,
   createDiveFailure,
   generalFailure

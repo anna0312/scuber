@@ -35,16 +35,28 @@ const onCreateDive = function (event) {
     .catch(ui.createDiveFailure)
 }
 
-const onUpdateDive = function () {
-  // stuff
+const onUpdateDive = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target) // event.target is same as "this" used above
+  api.updateDive(data)
+    .then(ui.updateDiveSuccess)
+    .catch(ui.generalFailure)
+}
+
+const onDeleteDive = function (event) {
+  event.preventDefault()
+  api.deleteDive($(event.target).data('diveid'))
+    .then(ui.deleteDiveSuccess)
+    .catch(ui.generalFailure)
 }
 
 const addHandlers = () => {
-  $('#create-dive').on('submit', onCreateDive)
-  $('#update-dive').on('submit', onUpdateDive)
+  $('body').on('submit', '#create-dive', onCreateDive)
+  $('body').on('submit', '#update-dive', onUpdateDive)
   $('#btn-show-dives').on('click', onShowDives)
   $('#btn-create-dive').on('click', onShowCreateDive)
   $('body').on('click', '.btn-update-dive', onShowUpdateDive)
+  $('body').on('click', '.btn-delete-dive', onDeleteDive)
 }
 
 const pageLoadEvents = () => {
