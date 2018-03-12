@@ -5,8 +5,12 @@ const store = require('../store')
 const getDives = function (data) {
   // console.log('token is', store.user.token)
   return $.ajax({
-    url: config.apiOrigin + '/dives/',
-    authorization: 'Token token=' + store.user.token
+    url: config.apiOrigin + '/dives',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
