@@ -1,0 +1,53 @@
+
+<div class="panel-group" id="dives-accordion">
+  {{#each dives as |dive|}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#dives-accordion" href="#dive{{dive.id}}">
+          {{dive.location}}
+        </a>
+      </h4>
+      </div>
+      <div id="dive{{dive.id}}" class="panel-collapse collapse">
+        <div class="panel-body">
+
+              <label class="show-dives-label">Date</label>
+              {{dive.date}}
+
+              <label class="show-dives-label">Duration:</label>
+              {{dive.duration}}
+
+          <br />
+
+
+              <label class="show-dives-label">Maximum depth:</label>
+              {{dive.max_depth}}
+
+
+              <label class="show-dives-label">PSI Used:</label>
+              {{dive.psi_used}}
+
+              <label class="show-dives-label">Weights worn:</label>
+              {{dive.weights_worn}}
+          <br />
+
+
+              <label class="show-dives-label">Rating: </label>
+              {{dive.rating}}
+
+              <label class="show-dives-label">Settings:</label>
+              {{#if dive.make_public}}
+                Public
+              {{else}}
+                Private
+              {{/if}}
+
+<br />
+<button class="btn btn-info btn-update-dive" data-diveid="{{dive.id}}">Edit this record</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+</div>

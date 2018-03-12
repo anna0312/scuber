@@ -1,0 +1,73 @@
+
+
+<form id="create-dive" role="form">
+  <input type="hidden" name="dive[user_id]" value="1">
+  <div class="form-group">
+    <label>Location</label>
+    <input type="text" class="form-control" id="location" name="dive[location]" placeholder="Location">
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control" id="date" name="dive[date]" placeholder="date">
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label>Duration</label>
+        <input type="text" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label>Max depth</label>
+        <input type="text" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet">
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label>PSI Used</label>
+        <input type="text" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI">
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label>Weights worn</label>
+        <input type="text" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Anything of note?</label>
+    <textarea class="form-control" id="notes" name="dive[notes]" placeholder="Anything special to report?"></textarea>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label>How was it?</label>
+        <select class="form-control" id="rating" name="dive[rating]">
+        <option value="5">Amazing!</option>
+        <option value="4">Pretty dern good</option>
+        <option value="3">Wasn't the worst. Wasn't the best.</option>
+        <option value="2">At least I didn't run out of air</option>
+        <option value="1">Worse than running out of air</option>
+      </select>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label>Care to share?</label>
+        <select name="dive[make_public]" class="form-control">
+        <option value="1">Public</option>
+        <option value="0">Private</option>
+      </select>
+      </div>
+    </div>
+  </div>
+
+  <input type="submit" id="submit-create-dive" value="Save my dive">
+</form>

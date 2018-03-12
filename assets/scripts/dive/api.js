@@ -2,6 +2,18 @@
 const config = require('../config')
 // const store = require('../store')
 
+const getDives = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/dives/'
+  })
+}
+
+const getDive = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/dives/' + id
+  })
+}
+
 const createDive = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/dives/',
@@ -14,5 +26,7 @@ const createDive = function (data) {
 }
 
 module.exports = {
-  createDive: createDive
+  createDive: createDive,
+  getDives,
+  getDive
 }
