@@ -1,7 +1,7 @@
 
 <div class="panel-group" id="dives-accordion">
   {{#each dives as |dive|}}
-    <div class="panel panel-default">
+    <div class="panel panel-default" data-panelDivID="{{dive.id}}">
       <div class="panel-heading">
         <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#dives-accordion" href="#dive{{dive.id}}">

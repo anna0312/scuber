@@ -27,17 +27,15 @@ const onCreateDive = function (event) {
   console.log('test')
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('event fired')
-
-  // pass the data object into the "signUp" function that calls out to the api
   api.createDive(data)
     .then(ui.createDiveSuccess)
     .catch(ui.createDiveFailure)
+  onShowDives()
 }
 
 const onUpdateDive = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target) // event.target is same as "this" used above
+  const data = getFormFields(this) // event.target is same as "this" used above
   api.updateDive(data)
     .then(ui.updateDiveSuccess)
     .catch(ui.generalFailure)
@@ -48,6 +46,7 @@ const onDeleteDive = function (event) {
   api.deleteDive($(event.target).data('diveid'))
     .then(ui.deleteDiveSuccess)
     .catch(ui.generalFailure)
+  onShowDives()
 }
 
 const addHandlers = () => {
@@ -65,5 +64,6 @@ const pageLoadEvents = () => {
 
 module.exports = {
   addHandlers: addHandlers,
-  pageLoadEvents: pageLoadEvents
+  pageLoadEvents: pageLoadEvents,
+  onShowDives
 }

@@ -17,7 +17,11 @@ const getDives = function (data) {
 const getDive = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/dives/' + id,
-    authorization: 'Token token=' + store.user.token
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -35,7 +39,7 @@ const createDive = function (data) {
 
 const updateDive = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/dives/' + data.id,
+    url: config.apiOrigin + '/dives/' + data.dive.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',

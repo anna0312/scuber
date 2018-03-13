@@ -1,7 +1,7 @@
 
 <h2>Updating: Dive {{dive.id}}</h2>
 <form id="update-dive" role="form">
-  <input type="hidden" name="dive[user_id]" value="1">
+  <input type="hidden" name="dive[id]" value="{{dive.id}}">
   <div class="form-group">
     <label>Location</label>
     <input type="text" class="form-control" id="location" name="dive[location]" placeholder="Location" value="{{dive.location}}">

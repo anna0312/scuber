@@ -1,6 +1,7 @@
 'use strict'
 // const store = require('../store')
 const helpers = require('../templates/helpers/helpers.js')
+const diveEvents = require('./events.js')
 const showDivesTemplate = require('../templates/show-dives.handlebars')
 const createDiveFormTemplate = require('../templates/create-dive-form.handlebars')
 const updateDiveFormTemplate = require('../templates/update-dive-form.handlebars')
@@ -31,7 +32,8 @@ const updateDiveSuccess = function (data) {
   console.log()
 }
 
-const deleteDiveSuccess = function (data) {
+const deleteDiveSuccess = function (diveID) {
+//  console.log('data', data)
   helpers.displayMessage('title', 'Dive deleted')
   helpers.displayMessage('subtitle', 'Dive deleted!')
 }
@@ -39,7 +41,6 @@ const deleteDiveSuccess = function (data) {
 const createDiveSuccess = function (data) {
   helpers.displayMessage('title', 'Dive saved')
   helpers.displayMessage('subtitle', 'Noice!')
-  console.log()
 }
 
 const createDiveFailure = function (error) {

@@ -86,12 +86,16 @@ const updateAuthLayout = function () {
     $('#display-not-auth').removeClass('show')
     $('#display-authed').addClass('show')
     $('#display-authed').removeClass('hidden')
+    $('#viewable-logged-in').addClass('show')
+    $('#viewable-logged-in').removeClass('hidden')
     // console.log('logged in')
   } else {
     $('#display-not-auth').addClass('show')
     $('#display-not-auth').removeClass('hidden')
     $('#display-authed').addClass('hidden')
     $('#display-authed').removeClass('show')
+    $('#viewable-logged-in').addClass('hidden')
+    $('#viewable-logged-in').removeClass('show')
     // console.log('not logged in')
   }
   clearFields()
