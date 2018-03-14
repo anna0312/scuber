@@ -1,5 +1,6 @@
 # SCUBER
 
+[https://anna0312.github.io/scuber/](https://anna0312.github.io/scuber/)
 SCUBER is a dive logging tool, intended to give divers the ability to record their dives and view their dive history.
 
 This is the repository for the front end of the application.
@@ -24,7 +25,7 @@ the plan so that my MVP was met first, which it has been: the ability to log div
 ## Issues I would like to fix
 There are a few glitches that I would like to solve, most noteably that the view of the list of dives
 is supposed to refresh when someone has added a new entry or deleted an existing dive. The order of operations seems
-to be messing things up because the refresh always shows the previous new item, not the current one. 
+to be messing things up because the refresh always shows the previous new item, not the current one.
 
 ### Wireframes
 https://imgur.com/a/G09sR
