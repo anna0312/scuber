@@ -10,7 +10,6 @@ const clearFields = function () {
 }
 
 const getDivesSuccess = (data) => {
-  console.log(data)
   const showDivesHtml = showDivesTemplate({ dives: data.dives })
   helpers.displayMessage('message', '')
   $('#primary-content').html(showDivesHtml)
@@ -28,11 +27,9 @@ const showUpdateDive = (data) => {
 
 const updateDiveSuccess = function (data) {
   helpers.displayMessage('message', 'Dive updated successfully. Click "See your dives" to refresh the list')
-  console.log()
 }
 
 const deleteDiveSuccess = function (diveID) {
-//  console.log('data', data)
   helpers.displayMessage('message', 'Dive deleted. Click "See your dives" to refresh the list')
 }
 
@@ -52,7 +49,6 @@ const createDiveFailure = function (error) {
 const generalFailure = function (error) {
   helpers.displayMessage('message', 'Yikes! Something went horribly awry!')
   console.error(error)
-  console.log('error is', error)
 }
 
 module.exports = {

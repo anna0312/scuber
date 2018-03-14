@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Scuber</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -25,13 +25,13 @@
           <div id="message" class="message"></div>
 
         <div id="display-not-auth" class="centered-content">
-          <br /><br />
+          <br />
           <a href="#" id="signInLink" class="auth-links">Log In</a>
           <a class="auth-links" href="#">::</a>
           <a href="#" id="signUpLink" class="auth-links">Sign Up</a>
 
           <div id="signInFormDiv" class="auth-box">
-            <h3 class="titleText">Log In</h3>
+            <h3 id="loginTitle" class="titleText">Log In</h3>
             <form id="sign-in" class="border">
               <div class="form-group">
                 <input type="text" class="form-control" id="loginEmail" name="credentials[email]" placeholder="Email" autocomplete="new-password">
@@ -72,7 +72,9 @@
           <div style="height: 300px;">
               <a id="change-password-button" data-toggle="collapse" href="#change-password-form" role="button" aria-expanded="false" aria-controls="change-password-form">
                       Change Password
-                    </a> &nbsp; // &nbsp;
+                    </a>
+                    <a class="auth-links" href="#">::</a>
+
               <a href="#" id="sign-out-button">Log Out</a>
               <div id="change-password-form" class="auth-box" >
                 <form id="change-password" class="border">

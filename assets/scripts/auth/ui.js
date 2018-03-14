@@ -18,11 +18,12 @@ const showSignIn = function () {
   $('#signUpFormDiv').hide()
 }
 
-
 const signUpSuccess = function (data) {
-  helpers.displayMessage('message', 'Welcome! Now log in... ')
+  helpers.displayMessage('message', '')
+  $('#loginTitle').text('Welcome! Please log in.')
   updateAuthLayout()
-  $('#collapseTwo').removeClass('in')
+  $('#signInFormDiv').show()
+  $('#signUpFormDiv').hide()
   clearFields()
 }
 
@@ -48,7 +49,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  helpers.displayMessage('message', 'Login unsuccessful. You sure you got that password right?')
+  helpers.displayMessage('message', 'Login unsuccessful. You sure you got that password right?', 'alert-text')
   console.error(error)
   clearFields()
 }
@@ -60,7 +61,7 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFailure = function (error) {
-  helpers.displayMessage('message', 'There was an issue changing your password')
+  helpers.displayMessage('message', 'There was an issue changing your password', 'alert alert-dismissible')
   console.error(error)
   clearFields()
 }
@@ -71,7 +72,8 @@ const signOutSuccess = function (data) {
   store.user = data
   // console.log(store)
   updateAuthLayout()
-  $('#collapseOne').removeClass('in')
+  $('#signInFormDiv').hide()
+  $('#signUpFormDiv').hide()
 }
 
 const signOutFailure = function (error) {

@@ -52,6 +52,11 @@ body {
   font-size: 18px;
 }
 
+.message-outline {
+  background-color: #fff;
+  border: 1px solid #c00819;
+
+}
 .panel-title {
   font-family: 'Fjalla One', sans-serif;
   color: #c00819;
@@ -93,4 +98,13 @@ a {
 .centered-content {
   margin: auto;
   text-align: center;
+}
+
+.btn-primary {
+  background-color: #1cb7bc;
+  border-color: #1cb7bc;
+}
+
+.btn {
+  border-radius: 0px;
 }

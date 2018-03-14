@@ -16,7 +16,7 @@
     <div class="col-xs-6">
       <div class="form-group">
         <label>Duration</label>
-        <input type="number" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)"  value="{{dive.duration}}">
+        <input type="number" min="0" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)"  value="{{dive.duration}}">
       </div>
     </div>
   </div>
@@ -25,19 +25,19 @@
     <div class="col-xs-4">
       <div class="form-group">
         <label>Max depth</label>
-        <input type="number" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet" value="{{dive.max_depth}}">
+        <input type="number" min="0" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet" value="{{dive.max_depth}}">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label>PSI Used</label>
-        <input type="number" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI" value="{{dive.psi_used}}">
+        <input type="number" min="0" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI" value="{{dive.psi_used}}">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label>Weights worn</label>
-        <input type="number" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs" value="{{dive.weight_used}}">
+        <input type="number" min="0" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs" value="{{dive.weight_used}}">
       </div>
     </div>
   </div>
@@ -71,5 +71,5 @@
   </div>
 -->
 
-  <input type="submit" id="submit-update-dive" value="Save my changes">
+  <input type="submit" class="btn btn-info" id="submit-update-dive" value="Save my changes">
 </form>

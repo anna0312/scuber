@@ -1,4 +1,4 @@
-
+  {{#if dives}}
 <div class="panel-group" id="dives-accordion" style="margin-top: 15px;">
   {{#each dives as |dive|}}
     <div class="panel panel-default" data-panelDivID="{{dive.id}}">
@@ -56,3 +56,6 @@
   {{/each}}
 
 </div>
+{{else}}
+<div class="message">You have not logged any dives yet!</div>
+{{/if}}

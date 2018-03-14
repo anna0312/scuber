@@ -50,7 +50,7 @@ const updateDive = function (data) {
 }
 
 const deleteDive = function (id) {
-  console.log('id is', id)
+  // console.log('id is', id)
   return $.ajax({
     url: config.apiOrigin + '/dives/' + id,
     method: 'DELETE',

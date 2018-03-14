@@ -1,61 +1,39 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# SCUBER
 
-# browser-template
+SCUBER is a dive logging tool, intended to give divers the ability to record their dives and view their dive history.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+This is the repository for the front end of the application.
 
-## Installation
+## Technologies used
+Handlebars, HTML, CSS, Javascript, JQuery, and the various configuration packages and
+linters available to me through the template.
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `scuber` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+I also imported fonts from google fonts
 
-## Structure
+## Planning and Process
+My original vision (as will be visible in the ERDs and wireframes) had a lot more bells an whistles, including:
+A separate Locations table, which would contain the coordinates and characteristics of each dive location
+A google map feature that would plot those coordinates on the map
+The ability for a user to add a location to the locations table
+The ability for the user to view other people's reviews of dive Locations
+A stats view using Charts.js
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+Based on what I learned last time, and on the advice I got from our wonderful instructors, I re-evaluated
+the plan so that my MVP was met first, which it has been: the ability to log dives, view dives, edit dives, and delete dives. I was disapointed not to get to include the bells and whistles, but hope to at least go back and add the Locations table so that I can practice building the many-to-many relationship.
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+## Issues I would like to fix
+There are a few glitches that I would like to solve, most noteably that the view of the list of dives
+is supposed to refresh when someone has added a new entry or deleted an existing dive. The order of operations seems
+to be messing things up because the refresh always shows the previous new item, not the current one. 
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+### Wireframes
+https://imgur.com/a/G09sR
 
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
+### User stories
 
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+As a user I want to be able to create an account
+As a user I want to be able to log in
+As a user I want to be able to see my dive history
+As a user I want to be able to enter new dives
+As a user I want to be able to edit existing dives
+As a user I want to be able to delete dives

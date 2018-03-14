@@ -24,7 +24,6 @@ const onShowUpdateDive = (event) => {
 
 const onCreateDive = function (event) {
   // prevent default action of page loading
-  console.log('test')
   event.preventDefault()
   const data = getFormFields(this)
   api.createDive(data)
