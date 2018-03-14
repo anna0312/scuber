@@ -1,5 +1,5 @@
 
-<h2>Updating: Dive {{dive.id}}</h2>
+<h2 class="titleText">Updating: Dive {{dive.id}}</h2>
 <form id="update-dive" role="form">
   <input type="hidden" name="dive[id]" value="{{dive.id}}">
   <div class="form-group">
@@ -10,13 +10,13 @@
     <div class="col-xs-6">
       <div class="form-group">
         <label>Date</label>
-        <input type="text" class="form-control" id="date" name="dive[date]" placeholder="date" value="{{dive.date}}">
+        <input type="date" class="form-control" id="date" name="dive[date]" placeholder="date" value="{{dive.date}}">
       </div>
     </div>
     <div class="col-xs-6">
       <div class="form-group">
         <label>Duration</label>
-        <input type="text" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)"  value="{{dive.duration}}">
+        <input type="number" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)"  value="{{dive.duration}}">
       </div>
     </div>
   </div>
@@ -25,19 +25,19 @@
     <div class="col-xs-4">
       <div class="form-group">
         <label>Max depth</label>
-        <input type="text" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet" value="{{dive.max_depth}}">
+        <input type="number" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet" value="{{dive.max_depth}}">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label>PSI Used</label>
-        <input type="text" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI" value="{{dive.psi_used}}">
+        <input type="number" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI" value="{{dive.psi_used}}">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label>Weights worn</label>
-        <input type="text" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs" value="{{dive.weight_used}}">
+        <input type="number" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs" value="{{dive.weight_used}}">
       </div>
     </div>
   </div>

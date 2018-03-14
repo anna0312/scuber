@@ -8,9 +8,19 @@ const clearFields = function () {
   $('#change-password')[0].reset()
 }
 
+const showSignUp = function () {
+  $('#signUpFormDiv').show()
+  $('#signInFormDiv').hide()
+}
+
+const showSignIn = function () {
+  $('#signInFormDiv').show()
+  $('#signUpFormDiv').hide()
+}
+
+
 const signUpSuccess = function (data) {
-  helpers.displayMessage('title', 'You\'re one of us now')
-  helpers.displayMessage('subtitle', 'Now, drink the Kool-Aid and log in to make it official')
+  helpers.displayMessage('message', 'Welcome! Now log in... ')
   updateAuthLayout()
   $('#collapseTwo').removeClass('in')
   clearFields()
@@ -19,21 +29,18 @@ const signUpSuccess = function (data) {
 const signUpFailure = function (error) {
 //  $('#authResponse').text('Error on signing up')
 //  $('#authResponse').css('background-color', 'red')
-  helpers.displayMessage('title', 'Yikes! Something went horribly awry!')
-  helpers.displayMessage('subtitle', 'Could be you already signed up? Or the API hates you.')
+  helpers.displayMessage('message', 'Oh no! Something went wrong!')
   console.error(error)
   clearFields()
 }
 
 const signUpFailPwdMatch = function () {
-  helpers.displayMessage('title', 'Ummm... spell much?')
-  helpers.displayMessage('subtitle', 'Your password and password confirmation don\'t match')
+  helpers.displayMessage('message', 'Your password and password confirmation don\'t match')
   clearFields()
 }
 
 const signInSuccess = function (data) {
-  helpers.displayMessage('title', 'Welcome back', 'big-red')
-  helpers.displayMessage('subtitle', 'Lets go diving!', 'big-green')
+  helpers.displayMessage('message', 'Welcome back. Lets go diving!')
   store.user = data.user
   updateAuthLayout()
   clearFields()
@@ -41,29 +48,25 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  helpers.displayMessage('title', 'Login was not successful.')
-  helpers.displayMessage('subtitle', 'You sure you got that password right?', 'big-green')
+  helpers.displayMessage('message', 'Login unsuccessful. You sure you got that password right?')
   console.error(error)
   clearFields()
 }
 
 const changePasswordSuccess = function () {
-  helpers.displayMessage('title', 'Done!')
-  helpers.displayMessage('subtitle', 'Your secret is safe with us', 'big-green')
+  helpers.displayMessage('message', 'Done! Your secret is safe with us.')
   $('#change-password-form').removeClass('in')
   clearFields()
 }
 
 const changePasswordFailure = function (error) {
-  helpers.displayMessage('title', 'There was an issue changing your password')
-  helpers.displayMessage('subtitle', 'Please check your spelling', 'big-green')
+  helpers.displayMessage('message', 'There was an issue changing your password')
   console.error(error)
   clearFields()
 }
 
 const signOutSuccess = function (data) {
-  helpers.displayMessage('title', 'Happy diving!')
-  helpers.displayMessage('subtitle', 'Come back soon...', 'big-green')
+  helpers.displayMessage('message', 'Hope you\'re off to go diving!')
   clearFields()
   store.user = data
   // console.log(store)
@@ -73,7 +76,6 @@ const signOutSuccess = function (data) {
 
 const signOutFailure = function (error) {
   helpers.displayMessage('title', 'Yikes! Problems.')
-  helpers.displayMessage('subtitle', 'Don\t get your panties in a twist', 'big-green')
   console.error(error)
   clearFields()
 }
@@ -88,6 +90,7 @@ const updateAuthLayout = function () {
     $('#display-authed').removeClass('hidden')
     $('#viewable-logged-in').addClass('show')
     $('#viewable-logged-in').removeClass('hidden')
+
     // console.log('logged in')
   } else {
     $('#display-not-auth').addClass('show')
@@ -96,6 +99,7 @@ const updateAuthLayout = function () {
     $('#display-authed').removeClass('show')
     $('#viewable-logged-in').addClass('hidden')
     $('#viewable-logged-in').removeClass('show')
+
     // console.log('not logged in')
   }
   clearFields()
@@ -112,5 +116,7 @@ module.exports = {
   signOutFailure,
   updateAuthLayout,
   signUpFailPwdMatch,
-  clearFields
+  clearFields,
+  showSignIn,
+  showSignUp
 }

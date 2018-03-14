@@ -1,5 +1,6 @@
 
 
+<h2 class="titleText">Log a dive</h2>
 <form id="create-dive" role="form">
 
   <div class="form-group">
@@ -10,13 +11,13 @@
     <div class="col-xs-6">
       <div class="form-group">
         <label>Date</label>
-        <input type="text" class="form-control" id="date" name="dive[date]" placeholder="date">
+        <input type="date" class="form-control" id="date" name="dive[date]" placeholder="date">
       </div>
     </div>
     <div class="col-xs-6">
       <div class="form-group">
         <label>Duration</label>
-        <input type="text" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)">
+        <input type="number" class="form-control" id="duration" name="dive[duration]" placeholder="Duration (in minutes)">
       </div>
     </div>
   </div>
@@ -25,19 +26,19 @@
     <div class="col-xs-4">
       <div class="form-group">
         <label>Max depth</label>
-        <input type="text" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet">
+        <input type="number" class="form-control" id="max_depth" name="dive[max_depth]" placeholder="In feet">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label>PSI Used</label>
-        <input type="text" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI">
+        <input type="number" class="form-control" id="psi_used" name="dive[psi_used]" placeholder="PSI">
       </div>
     </div>
     <div class="col-xs-4">
       <div class="form-group">
         <label>Weights worn</label>
-        <input type="text" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs">
+        <input type="number" class="form-control" id="weight_used" name="dive[weight_used]" placeholder="In lbs">
       </div>
     </div>
   </div>

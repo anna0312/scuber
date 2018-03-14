@@ -1,7 +1,6 @@
 'use strict'
 // const store = require('../store')
 const helpers = require('../templates/helpers/helpers.js')
-const diveEvents = require('./events.js')
 const showDivesTemplate = require('../templates/show-dives.handlebars')
 const createDiveFormTemplate = require('../templates/create-dive-form.handlebars')
 const updateDiveFormTemplate = require('../templates/update-dive-form.handlebars')
@@ -13,6 +12,7 @@ const clearFields = function () {
 const getDivesSuccess = (data) => {
   console.log(data)
   const showDivesHtml = showDivesTemplate({ dives: data.dives })
+  helpers.displayMessage('message', '')
   $('#primary-content').html(showDivesHtml)
 }
 
@@ -27,34 +27,30 @@ const showUpdateDive = (data) => {
 }
 
 const updateDiveSuccess = function (data) {
-  helpers.displayMessage('title', 'Dive updated')
-  helpers.displayMessage('subtitle', 'Dive updated successfully!')
+  helpers.displayMessage('message', 'Dive updated successfully. Click "See your dives" to refresh the list')
   console.log()
 }
 
 const deleteDiveSuccess = function (diveID) {
 //  console.log('data', data)
-  helpers.displayMessage('title', 'Dive deleted')
-  helpers.displayMessage('subtitle', 'Dive deleted!')
+  helpers.displayMessage('message', 'Dive deleted. Click "See your dives" to refresh the list')
 }
 
 const createDiveSuccess = function (data) {
-  helpers.displayMessage('title', 'Dive saved')
-  helpers.displayMessage('subtitle', 'Noice!')
+  helpers.displayMessage('message', 'Dive saved. Click "See your dives" to refresh the list')
 }
 
 const createDiveFailure = function (error) {
 //  $('#authResponse').text('Error on signing up')
 //  $('#authResponse').css('background-color', 'red')
-  helpers.displayMessage('title', 'Yikes! Something went horribly awry!')
+  helpers.displayMessage('message', 'Yikes! Something went horribly awry!')
   helpers.displayMessage('subtitle', 'Could be you already signed up? Or the API hates you.')
   console.error(error)
   clearFields()
 }
 
 const generalFailure = function (error) {
-  helpers.displayMessage('title', 'Something went wrong')
-  helpers.displayMessage('subtitle', 'Please contact the authorities')
+  helpers.displayMessage('message', 'Yikes! Something went horribly awry!')
   console.error(error)
   console.log('error is', error)
 }

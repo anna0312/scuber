@@ -1,5 +1,5 @@
 
-<div class="panel-group" id="dives-accordion">
+<div class="panel-group" id="dives-accordion" style="margin-top: 15px;">
   {{#each dives as |dive|}}
     <div class="panel panel-default" data-panelDivID="{{dive.id}}">
       <div class="panel-heading">
@@ -31,8 +31,11 @@
               <label class="show-dives-label">Weights worn:</label>
               {{dive.weights_worn}}
           <br />
+          <label class="show-dives-label">Notes:</label>
+          {{dive.notes}}
 
 
+<!--
               <label class="show-dives-label">Rating: </label>
               {{dive.rating}}
 
@@ -42,6 +45,7 @@
               {{else}}
                 Private
               {{/if}}
+            -->
 
 <br />
 <button class="btn btn-info btn-update-dive" data-diveid="{{dive.id}}">Edit this record</button>

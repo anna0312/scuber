@@ -28,9 +28,8 @@ const onCreateDive = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.createDive(data)
-    .then(ui.createDiveSuccess)
+    .then(ui.createDiveSuccess, onShowDives())
     .catch(ui.createDiveFailure)
-  onShowDives()
 }
 
 const onUpdateDive = function (event) {

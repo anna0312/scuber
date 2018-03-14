@@ -49,11 +49,21 @@ const onLogout = function () {
     .catch(ui.signOutFailure)
 }
 
+const onShowSignIn = function () {
+  ui.showSignIn()
+}
+
+const onShowSignUp = function () {
+  ui.showSignUp()
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onLogout)
+  $('#signInLink').on('click', onShowSignIn)
+  $('#signUpLink').on('click', onShowSignUp)
 }
 
 const pageLoadEvents = () => {
