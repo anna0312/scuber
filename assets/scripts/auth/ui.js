@@ -6,6 +6,7 @@ const clearFields = function () {
   $('#sign-in')[0].reset()
   $('#sign-up')[0].reset()
   $('#change-password')[0].reset()
+  $('#primary-content').html('')
 }
 
 const showSignUp = function () {
@@ -45,6 +46,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   updateAuthLayout()
   clearFields()
+  $('#primary-content').html('')
 //  $('#sign-up').reset()
 }
 
